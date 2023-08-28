@@ -56,9 +56,9 @@ from transformers.utils.versions import require_version
 
 
 # Will error if the minimal version of Transformers is not installed. Remove at your own risks.
-check_min_version("4.32.0")
 
-require_version("datasets>=1.8.0", "To fix: pip install -r examples/pytorch/language-modeling/requirements.txt")
+
+
 
 logger = logging.getLogger(__name__)
 
@@ -128,7 +128,7 @@ class ModelArguments:
         },
     )
     trust_remote_code: bool = field(
-        default=False,
+        default=True,
         metadata={
             "help": (
                 "Whether or not to allow for custom models defined on the Hub in their own modeling files. This option"
