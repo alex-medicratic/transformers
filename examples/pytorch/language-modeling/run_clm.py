@@ -32,7 +32,7 @@ from typing import Optional
 import datasets
 import evaluate
 import torch
-from datasets import load_dataset
+from datasets import load_dataset, set_caching_enabled
 
 import transformers
 from transformers import (
@@ -58,7 +58,7 @@ from transformers.utils.versions import require_version
 check_min_version("4.28.0")
 
 require_version("datasets>=1.8.0", "To fix: pip install -r examples/pytorch/language-modeling/requirements.txt")
-
+set_caching_enabled(False)
 logger = logging.getLogger(__name__)
 
 
@@ -182,7 +182,7 @@ class DataTrainingArguments:
             )
         },
     )
-    streaming: bool = field(default=False, metadata={"help": "Enable streaming mode"})
+    streaming: bool = field(default=True, metadata={"help": "Enable streaming mode"})
     block_size: Optional[int] = field(
         default=None,
         metadata={
