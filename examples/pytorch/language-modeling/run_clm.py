@@ -131,7 +131,7 @@ class ModelArguments:
         },
     )
     low_cpu_mem_usage: bool = field(
-        default=False,
+        default=True,
         metadata={
             "help": (
                 "It is an option to create the model as an empty shell, then only materialize its parameters when the pretrained weights are loaded."
