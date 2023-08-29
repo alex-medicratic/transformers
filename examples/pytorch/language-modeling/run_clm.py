@@ -32,7 +32,7 @@ from typing import Optional
 import datasets
 import evaluate
 import torch
-from datasets import load_dataset, set_caching_enabled
+from datasets import load_dataset
 
 import transformers
 from transformers import (
@@ -58,7 +58,7 @@ from transformers.utils.versions import require_version
 check_min_version("4.28.0")
 
 require_version("datasets>=1.8.0", "To fix: pip install -r examples/pytorch/language-modeling/requirements.txt")
-set_caching_enabled(False)
+
 logger = logging.getLogger(__name__)
 
 
